@@ -16,5 +16,6 @@ if (APPLE)
 endif()
 
 find_package(OpenSSL)
+find_package(Arrow)
 find_package(gRPC)
 
