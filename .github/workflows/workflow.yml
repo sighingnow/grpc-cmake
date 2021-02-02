@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: [macos-10.15]
 
     steps:
       - uses: actions/checkout@v2
@@ -12,7 +12,7 @@ jobs:
           submodules: recursive
 
       - name: install-depedencies
-        run: brew update && brew install grpc
+        run: brew update && brew install cmake grpc openssl
 
       - name: cmake-configure
         run: cmake -B build -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
